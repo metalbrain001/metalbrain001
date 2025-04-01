@@ -1,0 +1,9 @@
+{
+  "watch": ["src/server/**/*", "dist/server.js", ".env"],
+  "ignore": ["src/client/**/*"],
+  "ext": "js,ts, json",
+  "exec": "node dist/server.js",
+    "env": {
+        "NODE_ENV": "development"
+    }
+}
