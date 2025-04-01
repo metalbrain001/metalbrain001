@@ -30,3 +30,6 @@ dist-ssr
 *.swp
 .tsbuildinfo
 firebase.d.ts
+
+ssh-keygen -t rsa -b 4096 -C "metalbrain001@hotmail.com" -f ~/.ssh/metalbrain_rsa
+
