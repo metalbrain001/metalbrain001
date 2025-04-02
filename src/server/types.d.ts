@@ -125,6 +125,18 @@ export interface FirebaseSignUpProps {
   providerId: string;
 }
 
+export interface IFirebaseUser {
+  uid: string;
+  email: string;
+  name?: string | null;
+  provider: string;
+  emailVerified: boolean;
+  idToken: string;
+  role?: "SUPERADMIN" | "ADMIN" | "USER"; // matches Prisma Role enum
+}
+
+export type FirebaseProps = IFirebaseUser;
+
 export interface ICsrfService {
   generateToken(reply: FastifyReply): string;
   validateToken(req: FastifyRequest): boolean;
@@ -141,4 +153,28 @@ export interface IPasswordHasher {
   hashPassword(password: string): Promise<string>;
   comparePassword(password: string, hashedPassword: string): Promise<boolean>;
   validatePassword(password: string): void;
+}
+
+export interface IAdmin {
+  kind: string;
+  users: [
+    {
+      localId: string;
+      email: string;
+      displayName: string;
+      photoUrl: string;
+      emailVerified: boolean;
+      providerUserInfo: Array<{
+        providerId: string;
+        displayName: string;
+        photoUrl: string;
+        federatedId: string;
+        email: string;
+      }>;
+      validSince: string;
+      lastLoginAt: string;
+      createdAt: string;
+      lastRefreshAt: string;
+    },
+  ];
 }

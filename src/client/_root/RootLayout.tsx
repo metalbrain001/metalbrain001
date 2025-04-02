@@ -1,7 +1,6 @@
 import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "@/client/_auth/hooks/use-auth";
-import { useEffect } from "react";
 import TopBar from "@/client/components/TopBar";
 import SideBar from "@/client/components/SideBar";
 

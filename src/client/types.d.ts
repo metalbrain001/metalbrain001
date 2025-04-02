@@ -90,3 +90,38 @@ export interface SendEmailProps {
   body: string;
   link?: string;
 }
+
+export interface IFirebaseUser {
+  uid: string;
+  email: string;
+  name?: string | null;
+  provider: string;
+  emailVerified: boolean;
+  role?: string;
+}
+
+export type FirebaseProps = IFirebaseUser;
+
+export interface IAdmin {
+  kind: string;
+  users: [
+    {
+      localId: string;
+      email: string;
+      displayName: string;
+      photoUrl: string;
+      emailVerified: boolean;
+      providerUserInfo: Array<{
+        providerId: string;
+        displayName: string;
+        photoUrl: string;
+        federatedId: string;
+        email: string;
+      }>;
+      validSince: string;
+      lastLoginAt: string;
+      createdAt: string;
+      lastRefreshAt: string;
+    },
+  ];
+}

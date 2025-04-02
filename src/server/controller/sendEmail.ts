@@ -1,8 +1,8 @@
 // src/server/controller/adminController.ts
 import { FastifyRequest, FastifyReply } from "fastify";
-import PrismAdminRepo from "../repository/admin/prismadminrepo.js";
+import FirebaseRepo from "../repository/firebase/firebaseRepo.js";
 
-const adminRepo = new PrismAdminRepo();
+const adminRepo = new FirebaseRepo();
 
 export const sendEmailController = async (
   request: FastifyRequest,
